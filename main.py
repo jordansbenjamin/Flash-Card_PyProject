@@ -1,8 +1,21 @@
 from tkinter import *
+import pandas as pd
+import random as rand
 
 BACKGROUND_COLOR = "#B1DDC6"
 TITLE_FONT = ("Ariel", 40, "italic")
 WORD_FONT = ("Ariel", 60, "bold")
+FRENCH_WORDS_FILE = "./data/french_words.csv"
+
+# --------DATA---------
+
+data = pd.read_csv(FRENCH_WORDS_FILE)
+
+data_dict = data.to_dict(orient='records')
+
+random_word = rand.choice(data_dict)
+
+
 
 # --------UI SETUP--------- 
 
